@@ -1,5 +1,5 @@
 #
-# Copyright 2017 The Android Open Source Project
+# Copyright (C) 2019 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,9 +14,15 @@
 # limitations under the License.
 #
 
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
-$(call inherit-product, device/umidigi/f1/full_f1.mk)
-
+## Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := f1
 PRODUCT_NAME := omni_f1
+PRODUCT_BRAND := umidigi
+PRODUCT_MODEL := F1
+PRODUCT_MANUFACTURER := umidigi
